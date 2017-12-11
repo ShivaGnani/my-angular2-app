@@ -1,0 +1,35 @@
+<div class="card search">
+    <h1 class="search-headline">Products Lists</h1>
+    <label class="search-label">
+        <span *ngIf="query" [innerHTML]="'Selected product: '+query"></span>
+    </label>
+
+    <div>
+        <span>
+            <input type="text" class="search-input" [(ngModel)]="query" placeholder="type in to search for a product" />
+        </span>
+        <div>
+            <div>
+                <button class="btn" (click)='showAdd="true";'>Add product</button>
+                <div *ngIf="showAdd">
+                    <input type="text" class="input-text" #productName/>
+                    <input type="text" class="input-text" #categoryName/>
+                    <input type="text" class="input-text" #quantityPerUnit/>
+                    <input type="text" class="input-text" #inStock/>
+                    <button class="btn" (click)="addNewProduct(productName.value,
+                                                        categoryName.value,
+                                                        quantityPerUnit.value,   
+                                                        inStock.value); showAdd=''"> Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="itemlist cf" *ngIf="query">
+        <li class="itemlist-item cf" (click)="onProductClick(item); query=''" *ngFor="let item of products|search:query">
+            <product-item class="content" [product]=item></product-item>
+        </li>
+    </ul>
+
+    <product-details *ngIf="selectedProduct" [product]="selectedProduct">
+    </product-details>
