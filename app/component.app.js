@@ -28,14 +28,8 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 onProductClick(product) {
                     this.selectedProduct = product;
                 }
-                addNewProduct(name, category, quantity, inStock) {
-                    this.products.push({
-                        ProductName: name,
-                        CategoryName: category,
-                        QuantityPerUnit: quantity,
-                        UnitsInStock: inStock,
-                        Discontinued: 0
-                    });
+                addNewProduct(newProduct) {
+                    this.products.push(newProduct);
                 }
             };
             AppComponent = __decorate([

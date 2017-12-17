@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './component.app', './component.product-item', './component.product-details', './pipe.search'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './component.app', './component.product-item', './component.product-details', './component.add-product', './pipe.search'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, component_app_1, component_product_item_1, component_product_details_1, pipe_search_1;
+    var core_1, platform_browser_1, forms_1, component_app_1, component_product_item_1, component_product_details_1, component_add_product_1, pipe_search_1;
     var AppModule;
     return {
         setters:[
@@ -32,6 +32,9 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             function (component_product_details_1_1) {
                 component_product_details_1 = component_product_details_1_1;
             },
+            function (component_add_product_1_1) {
+                component_add_product_1 = component_add_product_1_1;
+            },
             function (pipe_search_1_1) {
                 pipe_search_1 = pipe_search_1_1;
             }],
@@ -46,6 +49,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                     ],
                     declarations: [
                         component_app_1.AppComponent,
+                        component_add_product_1.AddProductComponent,
                         component_product_item_1.ProductItemComponent,
                         component_product_details_1.ProductDetailsComponent,
                         pipe_search_1.SearchPipe

@@ -20,12 +20,15 @@ System.register(['@angular/core'], function(exports_1, context_1) {
         execute: function() {
             ProductItemComponent = class ProductItemComponent {
             };
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', Object)
+            ], ProductItemComponent.prototype, "product", void 0);
             ProductItemComponent = __decorate([
                 core_1.Component({
                     selector: 'product-item',
                     templateUrl: './partials/product-item.html',
-                    styleUrls: ["./css/product-item.css"],
-                    inputs: ['product']
+                    styleUrls: ["./css/product-item.css"]
                 }), 
                 __metadata('design:paramtypes', [])
             ], ProductItemComponent);

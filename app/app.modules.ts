@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './component.app';
 import {ProductItemComponent} from './component.product-item';
 import {ProductDetailsComponent} from './component.product-details';
+import {AddProductComponent} from './component.add-product';
 
 import {SearchPipe} from './pipe.search';
 
@@ -15,8 +16,9 @@ import {SearchPipe} from './pipe.search';
   ],
   declarations: [
     AppComponent,
+    AddProductComponent,
     ProductItemComponent,
-    ProductDetailsComponent,
+    ProductDetailsComponent, 
     SearchPipe
   ],
   bootstrap: [
