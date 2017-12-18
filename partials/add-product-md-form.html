@@ -1,0 +1,35 @@
+<header>
+  <h2>Using model driven form - Add product to inventory</h2>
+</header>
+<!-- Setting "form" proeprty created in component to "[formGroup]" which tells angualr that "form" is the form object -->
+<form [formGroup]="form" (submit)="onSubmit(form.value)">
+  <ul>
+    <li>
+      <label for="name">Name</label>
+      <!--"formControlName" is to use it as control property in FormGroup  -->
+      <input class="input-text" type="text" name="name" id="name" formControlName="name">
+      <!-- Using the validators proeprties for error handling -->
+      <span class="error" *ngIf="form.controls.name.errors?.pattern">
+        Name has invalid characters
+      </span>
+    </li>
+    <li>
+      <label for="category">Category</label>
+      <select class="input-text" name="category" id="category" formControlName="category">
+        <option *ngFor="let category of categoryList.categories" value="{{category}}">{{category}}</option>
+      </select>
+    </li>
+    <li>
+      <label for="quantity">Quantity per unit</label>
+      <input class="input-text" type="text" name="quantity" id="quantity" formControlName="quantity">
+    </li>
+    <li>
+      <label for="stock">In stock</label>
+      <input class="input-text" type="text" name="stock" id="stock" formControlName="stock">
+      <span class="error" *ngIf="form.controls.stock.errors?.errorData">
+        Should be between {{form.controls.stock.errors?.errorData.minStock}} and {{form.controls.stock.errors?.errorData.maxStock}}
+      </span>
+    </li>
+  </ul>
+  <button class="btn" type="submit" [disabled]="!form.valid">Save</button>
+</form>

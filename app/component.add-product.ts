@@ -24,7 +24,7 @@ export class AddProductComponent {
     this.newProduct.CategoryName = this.CategoryName;
     this.newProduct.QuantityPerUnit = this.QuantityPerUnit;
     this.newProduct.UnitsInStock = this.UnitsInStock;
-    this.newProduct.Discontinued = 0;
+    this.newProduct.Discontinued = false;
     this.add.emit(this.newProduct);
   }
 }

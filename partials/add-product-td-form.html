@@ -1,0 +1,32 @@
+<header>
+    <h2>Using form driven form - Add product to inventory</h2>
+  </header>
+  <form
+  #newProductItemForm = "ngForm"
+  (submit) = "onSubmit(newProductItemForm.value)"
+  >
+    <ul>
+      <li>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+      </li>
+      <li>
+        <label for="categoryName">Category</label>
+        <select name="category" id="category" ngModel>
+          <option value="Bevarages">Bevarages</option>
+          <option value="Condiments">Condiments</option>
+          <option value="Produce">ProduceComedy</option>
+          <option value="Seafood">Seafood</option>
+        </select>
+      </li>
+      <li>
+        <label for="quantity">Quantity per unit</label>
+        <input type="text" name="quantity" id="quantity">
+      </li>
+      <li>
+        <label for="stock">In stock</label>
+        <input type="text" name="stock" id="stock">
+      </li>
+    </ul>
+    <button type="submit">Save</button>
+  </form>

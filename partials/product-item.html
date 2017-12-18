@@ -1,3 +1,5 @@
-<h2 class="item-name">
-    {{product.ProductName}}</h2>
-<h3 class="item-reknown">{{product.CategoryName}}</h3>
+<div [productFavorite]="product.Discontinued">
+    <h2 class="item-name">
+        {{product.ProductName}}</h2>
+    <h3 class="item-reknown">{{product.CategoryName}}</h3>
+</div>
