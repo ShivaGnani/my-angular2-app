@@ -21,7 +21,9 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.products = this.productItemsService.get();
+    console.log(this.productItemsService.get());
+    var list = this.productItemsService.get()
+      .subscribe(products => this.products = products);
   }
 
   addNewProduct(newProduct) {
@@ -35,10 +37,18 @@ export class AppComponent {
 
 export class Product {
   ProductName: string;
+  UnitPrice: number;
   CategoryName: string;
   QuantityPerUnit: string;
   UnitsInStock: number;
   Discontinued: boolean;
+
+  /**
+   *
+   */
+  constructor(private product) {
+
+  }
 }
 
 

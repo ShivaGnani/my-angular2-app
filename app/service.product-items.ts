@@ -1,6 +1,21 @@
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { Response } from '@angular/http/src/static_response';
+import { Product } from './component.app';
+import { Observable } from 'rxjs/Observable';
+
+@Injectable()
 export class ProductItemsService {
-    get() {
-        return this.productsList;
+
+    /**
+     *
+     */
+    constructor(private http: Http) {
+    }
+    get(){
+        return this.http.get('http://localhost/NorthWind_WebAPI/api/Order/GetAllProducts')
+            .map(response => response.json());
     }
 
     add(newProduct) {
@@ -12,7 +27,7 @@ export class ProductItemsService {
         if (index >= 0)
             this.productsList.slice(product);
     }
-
+    
 
     productsList = [
         {

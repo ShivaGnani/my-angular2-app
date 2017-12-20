@@ -29,7 +29,9 @@ System.register(['@angular/core', './service.product-items'], function(exports_1
                     this.productItemsService = productItemsService;
                 }
                 ngOnInit() {
-                    this.products = this.productItemsService.get();
+                    console.log(this.productItemsService.get());
+                    var list = this.productItemsService.get()
+                        .subscribe(products => this.products = products);
                 }
                 addNewProduct(newProduct) {
                     this.productItemsService.add(newProduct);
@@ -48,6 +50,12 @@ System.register(['@angular/core', './service.product-items'], function(exports_1
             ], AppComponent);
             exports_1("AppComponent", AppComponent);
             Product = class Product {
+                /**
+                 *
+                 */
+                constructor(product) {
+                    this.product = product;
+                }
             };
             exports_1("Product", Product);
         }
